@@ -1,0 +1,34 @@
+{
+  "pages": [
+    {
+      "id": "c4UVLbQ",
+      "grid": {
+        "tiles": []
+      },
+      "showTitle": false
+    }
+  ],
+  "owner": "alex",
+  "listed": true,
+  "name": "Credit Card Fraud Data\u0027s default dashboard",
+  "showGrid": true,
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1599157262798
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1599157262798
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

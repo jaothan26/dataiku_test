@@ -1,0 +1,332 @@
+{
+  "type": "Filesystem",
+  "managed": true,
+  "formatType": "csv",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": false,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "fileReadFailureBehavior": "FAIL",
+    "compress": "gz"
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "versionTag": {
+    "versionNumber": 31,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1605024867782
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "msakande"
+    },
+    "lastModifiedOn": 1600116807251
+  },
+  "tags": [],
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "/DKU_TUT_PARTITION_COLBASED.transactions_copy",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {
+        "name": "transaction_id",
+        "type": "string"
+      },
+      {
+        "name": "authorized_flag",
+        "type": "string",
+        "meaning": "is1_t"
+      },
+      {
+        "name": "purchase_date",
+        "type": "string"
+      },
+      {
+        "name": "card_id",
+        "type": "string"
+      },
+      {
+        "name": "merchant_id",
+        "type": "string"
+      },
+      {
+        "name": "merchant_category_id",
+        "type": "string"
+      },
+      {
+        "name": "item_category",
+        "type": "string"
+      },
+      {
+        "name": "purchase_amount",
+        "type": "string"
+      },
+      {
+        "name": "signature_provided",
+        "type": "string"
+      }
+    ],
+    "userModified": true
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "col_stats",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns statistics",
+          "level": 2
+        },
+        "configuration": {
+          "aggregates": [
+            {
+              "column": "card_id",
+              "aggregated": "MIN"
+            }
+          ]
+        }
+      },
+      {
+        "type": "adv_col_stats",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Most frequent values",
+          "level": 3
+        },
+        "configuration": {
+          "aggregates": [],
+          "numberTopValues": 10
+        }
+      },
+      {
+        "type": "percentile_stats",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns percentiles",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": [
+            {
+              "column": "signature_provided",
+              "aggregated": "P50"
+            }
+          ]
+        }
+      },
+      {
+        "type": "verify_col",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Data validity",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "cell",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Cell value",
+          "level": 9
+        },
+        "configuration": {
+          "mode": "MULTI_CELL",
+          "filter": {
+            "distinct": false,
+            "enabled": true,
+            "uiData": {
+              "mode": "\u0026\u0026",
+              "conditions": [
+                {
+                  "input": "authorized_flag",
+                  "operator": "\u003d\u003d [number]",
+                  "col": "transaction_id",
+                  "num": 0.0
+                }
+              ]
+            }
+          },
+          "columns": [
+            "purchase_date"
+          ]
+        }
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "partition": "NP",
+      "columns": [
+        "purchase_amount",
+        "signature_provided",
+        "transaction_id"
+      ],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "records:COUNT_RECORDS",
+        "reporting:BUILD_START_DATE",
+        "col_stats:MIN:signature_provided",
+        "col_stats:MIN:purchase_amount",
+        "col_stats:MIN:card_id",
+        "cell:authorized_flag:Cell value",
+        "cell:purchase_date:Cell value"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [
+      {
+        "metricId": "col_stats:MIN:purchase_amount",
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "softMinimum": 0.0,
+        "softMaximum": 0.0,
+        "minimumEnabled": true,
+        "maximumEnabled": false,
+        "softMinimumEnabled": false,
+        "softMaximumEnabled": false,
+        "type": "numericRange",
+        "meta": {
+          "name": "Value in range",
+          "label": "Purchase amount positive"
+        },
+        "computeOnBuildMode": "PARTITION"
+      }
+    ],
+    "displayedState": {
+      "partition": "NP",
+      "checks": [
+        "Purchase amount positive"
+      ]
+    }
+  },
+  "customFields": {
+    "gdpr_contains_personal_data": "UNSURE"
+  }
+}

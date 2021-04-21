@@ -1,0 +1,229 @@
+{
+  "dashboardAuthorizations": {
+    "allAuthorized": false,
+    "authorizations": []
+  },
+  "exposedObjects": {
+    "objects": []
+  },
+  "projectType": "REGULAR",
+  "projectAppType": "REGULAR",
+  "bundleExporterSettings": {
+    "exportOptions": {
+      "exportUploads": false,
+      "exportManagedFS": false,
+      "exportAnalysisModels": false,
+      "exportSavedModels": false,
+      "exportManagedFolders": false,
+      "exportAllInputDatasets": false,
+      "exportAllDatasets": false,
+      "exportAllInputManagedFolders": false,
+      "exportGitRepository": false,
+      "exportInsightsData": false,
+      "useManualPluginsInfo": false,
+      "includedDatasetsData": [],
+      "includedSavedModels": [],
+      "includedManagedFolders": [],
+      "shareAllInputDatasets": false
+    }
+  },
+  "owner": "jaothan",
+  "permissions": [],
+  "additionalDashboardUsers": {
+    "users": []
+  },
+  "tutorialProject": false,
+  "settings": {
+    "flowAnchorSourcesAndSinks": true,
+    "gitCommitMode": "AUTO",
+    "disableAutomaticTriggers": false,
+    "integrations": {
+      "integrations": []
+    },
+    "flowBuildSettings": {
+      "mergeSparkPipelines": false,
+      "pruneBeforeSparkPipelines": true,
+      "mergeSqlPipelines": false,
+      "pruneBeforeSqlPipelines": true
+    },
+    "limitsSettings": {
+      "memSampleBytes": {
+        "soft": -1,
+        "hard": -1
+      },
+      "shakerMemTableBytes": {
+        "soft": -1,
+        "hard": -1
+      },
+      "attachmentBytes": {
+        "soft": -1,
+        "hard": -1
+      }
+    },
+    "relocationSettings": {
+      "sqlLikeRecipesInitializationMode": "RESOLVED_TABLE_REFERENCES"
+    },
+    "recipeEnginesPreferences": {
+      "forbiddenEngines": [],
+      "enginesPreferenceOrder": [],
+      "forbiddenByRecipeType": {},
+      "preferenceByRecipeType": {}
+    },
+    "codeEnvs": {
+      "python": {
+        "mode": "INHERIT",
+        "preventOverride": false
+      },
+      "r": {
+        "mode": "INHERIT",
+        "preventOverride": false
+      },
+      "julia": {
+        "mode": "INHERIT",
+        "preventOverride": false
+      }
+    },
+    "container": {
+      "containerMode": "INHERIT"
+    },
+    "datasetsCreationSettings": {
+      "useGlobal": true,
+      "preferedStorageFormats": "CSV_ESCAPING_NOGZIP_FORHIVE,CSV_EXCEL_GZIP,PARQUET_HIVE",
+      "virtualizable": false,
+      "allowUploadsWithoutConnection": true
+    },
+    "hiveEngineCreationSettings": {
+      "useGlobal": true,
+      "executionEngine": "HIVECLI_LOCAL"
+    },
+    "sparkEngineCreationSettings": {
+      "useGlobal": true,
+      "executionEngine": "SPARK_SUBMIT",
+      "useGlobalMetastore": false
+    },
+    "impalaEngineCreationSettings": {
+      "useGlobal": true,
+      "streamMode": true
+    },
+    "wikiSettings": {
+      "promoted": false
+    },
+    "cluster": {
+      "clusterMode": "INHERIT"
+    },
+    "k8sCluster": {
+      "clusterMode": "INHERIT"
+    },
+    "virtualWebAppBackendSettings": {
+      "mode": "INHERIT",
+      "preventOverride": false,
+      "infra": {
+        "containerSelection": {
+          "containerMode": "INHERIT"
+        },
+        "overrideGlobalK8sExposition": false,
+        "exposition": {
+          "type": "local_process",
+          "params": {}
+        },
+        "scaling": {
+          "initialReplicas": 1,
+          "hpa": false,
+          "hpaTargetCPUPercent": 0,
+          "hpaMetrics": [],
+          "hpaMinPods": 0,
+          "hpaMaxPods": 0,
+          "hpaAnnotations": []
+        },
+        "deploymentModifier": {}
+      }
+    }
+  },
+  "name": "Advanced Partitioning: Column-Based (Tutorial)",
+  "imgPattern": 4,
+  "showInitials": false,
+  "metrics": {
+    "probes": [],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": []
+    }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "versionTag": {
+    "versionNumber": 45,
+    "lastModifiedBy": {
+      "login": "jaothan"
+    },
+    "lastModifiedOn": 1618992786229
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1599157262794
+  },
+  "description": "# Welcome to the Advanced Partitioning - Column-Based - Tutorial\n\n\u003cp class\u003d\"text-center\"\u003e\n   \u003ca href\u003d\"https://academy.dataiku.com/advanced-partitioning\" target\u003d\"_blank\" class\u003d\"btn btn-datasets-color btn-cta-big-mod\"\u003e\u003ci class\u003d\"icon-dku-sample_project\" class\u003d\"btn-cta-big-mod-icon\" /\u003e\u0026nbsp;Academy\n  \u003c/a\u003e\n\u003c/p\u003e\n\nIn this tutorial, you will create an automation scenario to rebuild the datasets in the Flow.",
+  "shortDesc": "Learn to partition column-based datasets in a Flow. Apply both time-based and discrete-based dimensions to computations.",
+  "tags": [
+    "tutorial",
+    "partitions",
+    "imported"
+  ],
+  "customFields": {
+    "gdpr_forbid_dataset_sharing": false,
+    "gdpr_forbid_dataset_export": false,
+    "gdpr_forbid_model_creation": false,
+    "gdpr_forbid_uploaded_datasets": false
+  },
+  "checklists": {
+    "checklists": []
+  }
+}

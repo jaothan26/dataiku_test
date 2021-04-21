@@ -1,0 +1,54 @@
+{
+  "type": "prediction_training",
+  "neverRecomputeExistingPartitions": false,
+  "optionalDependencies": false,
+  "params": {
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    }
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
+  "inputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "transactions_known",
+          "deps": []
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "main": {
+      "items": [
+        {
+          "ref": "ScWGJkZ4",
+          "appendMode": false
+        }
+      ]
+    }
+  },
+  "versionTag": {
+    "versionNumber": 4,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1605025172562
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "msakande"
+    },
+    "lastModifiedOn": 1600119479753
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

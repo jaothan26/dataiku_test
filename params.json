@@ -140,7 +140,7 @@
       }
     }
   },
-  "name": "Advanced Partitioning: Column-Based (Tutorial)",
+  "name": "Advanced Partitioning: Column-Based_Tut_Dev",
   "imgPattern": 4,
   "showInitials": false,
   "metrics": {
@@ -198,11 +198,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 47,
+    "versionNumber": 48,
     "lastModifiedBy": {
       "login": "jaothan"
     },
-    "lastModifiedOn": 1618996347166
+    "lastModifiedOn": 1618996352546
   },
   "creationTag": {
     "versionNumber": 0,
@@ -212,7 +212,7 @@
     "lastModifiedOn": 1599157262794
   },
   "description": "# Welcome to the Advanced Partitioning - Column-Based - Tutorial\n\n\u003cp class\u003d\"text-center\"\u003e\n   \u003ca href\u003d\"https://academy.dataiku.com/advanced-partitioning\" target\u003d\"_blank\" class\u003d\"btn btn-datasets-color btn-cta-big-mod\"\u003e\u003ci class\u003d\"icon-dku-sample_project\" class\u003d\"btn-cta-big-mod-icon\" /\u003e\u0026nbsp;Academy\n  \u003c/a\u003e\n\u003c/p\u003e\n\nIn this tutorial, you will create an automation scenario to rebuild the datasets in the Flow.",
-  "shortDesc": "Learn to partition column-based datasets in a Flow. Apply both time-based and discrete-based dimensions to computations.",
+  "shortDesc": "Learn to partition column-based datasets in a Flow. Apply both time-based and discrete-based dimensions to computations.\nThe project *ADVANCED_PARTITIONING_COLUMN_BASED_TUT_DEV* was copied from *DKU_TUT_PARTITION_COLBASED* by jaothan on Apr 21st 2021",
   "tags": [
     "tutorial",
     "partitions",
